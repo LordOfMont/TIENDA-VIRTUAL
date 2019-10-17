@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.5.0/css/all.css' integrity='sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU' crossorigin='anonymous'>
+    <title>Factura Benneton Bolivia</title>
+  </head>
+
+<body>
+   <div class="container">
+      <div class="row">
+        <div class="col text-center">
+         <h1>FACTURA ORIGINAL</h1><br>
+         <h5>NIT: {{nitempre}}</h5><br>
+         <h5>FACTURA N° {{nofactura}}</h5><br>
+         <h5>AUTORIZACION N° {{autorizacion}}</h5><br>
+        </div>
+       </div>
+       <hr>
+       <div class="row">
+        <div class="col text-center">
+         <h6>Venta al por menor de productos textiles, prendas de Vestir, Calzados y Articulos de Cuero</h6>
+      </div>
+    </div>
+       <hr>
+       <div class="row">
+        <div class="col">
+         <h6>Fecha: {{fecha}} Hora: {{hora}}</h6><br>
+         <h6>Señor(es): {{nombre}}</h6><br>
+         <h6>NIT/CI: {{nit}}</h6>
+       </div>
+     </div>
+        <hr>
+        <div class="row">
+        <div class="col">
+        <table class="table col-8 offset-2 mt-0 mb-0">
+            <thead>
+              <tr>
+                <th scope="col">Producto</th>
+                <th scope="col">Precio</th>
+                <th scope="col">Talla</th>
+                <th scope="col">Cantidad</th>
+                <th scope="col">Sub Total</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for product in products %}
+                <tr>
+                  <td>{{product.producto}}</td>
+                  <td>{{product.precio}}</td>
+                  <td>{{product.tallap}}</td>
+                  <td>{{product.cantidad}}</td>
+                  <td>{{product.subt}}</td>
+                </tr>
+              {% endfor %}
+            </tbody>
+        </table>
+      </div>
+    </div>
+        <hr>
+        <div class="row">
+        <div class="col">
+        <h6>TOTAL: Bs.- {{total}}</h6><br>
+        <h6>Son: {{literal}}</h6><br>
+      </div>
+    </div>
+        <hr>
+        <div class="row">
+        <div class="col">
+        <h6>Cod Control: {{codcontrol}}</h6>
+        <h6>Limite de Emision: {{flimite}}</h6>
+      </div>
+    </div>
+    <div class="row">
+        <div class="col-6 offset-3 text-center">
+        <h6>Esta Factura contribuye al desarrollo del pais. El uso ilicito de esta sera sancionado de acuerdo a la ley</h6>
+      </div>
+    </div>
+   </div>
+  </body>
+</html>

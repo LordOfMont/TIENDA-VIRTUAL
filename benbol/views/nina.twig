@@ -1,0 +1,201 @@
+{% extends "layoutuser.twig" %}
+{% block main %}
+<main id="main">
+{% if responseMessage %}
+  <div class="alert alert-info mb-0" role="alert">
+      {{ responseMessage }}
+  </div>
+{% endif %}
+<div class="row mt-1 mb-0">
+  <div class="col-2 list-ben" id="menu-ben">
+    <div class="list-group" id="list-tab" role="tablist">
+      <a class="list-group-item list-group-item-action active" id="list-uno-list" data-toggle="list" href="#uno" role="tab" aria-controls="uno">Prendas de Punto</a>
+      <a class="list-group-item list-group-item-action" id="list-dos-list" data-toggle="list" href="#dos" role="tab" aria-controls="dos">Chaquetas y Abrigos</a>
+      <a class="list-group-item list-group-item-action" id="list-tres-list" data-toggle="list" href="#tres" role="tab" aria-controls="tres">Leggins</a>
+      <a class="list-group-item list-group-item-action" id="list-cuatro-list" data-toggle="list" href="#cuatro" role="tab" aria-controls="cuatro">Vestidos y Monos</a>
+      <a class="list-group-item list-group-item-action" id="list-cinco-list" data-toggle="list" href="#cinco" role="tab" aria-controls="cinco">Recien Nacida</a>
+    </div>
+  </div>
+  <div class="col-10">
+    <div class="tab-content" id="nav-tabContent">
+      <div class="tab-pane fade show active text-center" id="uno" role="tabpanel" aria-labelledby="list-uno-list">
+        <h2>Prendas de Punto</h2>
+        <div class="container">
+          <div class="row">
+          {% for product in products %}
+          {% if product.activo==1 %}
+          {% if product.categoria==6 %}
+          <div class="col-4 text-center">
+            <div class="card text-center" style="width: 18rem;">
+              <img src="uploads/{{product.imagen}}" width="300" >
+              <div class="card-body">
+              <h5 class="card-title">{{product.nombre}}</h5>
+              <p class="card-text">{{product.detalle}}</p>
+              <p class="card-text">Precio Bs.- {{product.precio}}</p>
+              <form action="/benbol/addcarrito/{{product.idProducto}}" method="post">
+               <label class="campo-ben my-1 mr-2" for="tallas">Talla</label>
+                   <select name="tallas" class="custom-select my-1 mr-sm-2" id="tallas">
+                      <option value="1">4</option>
+                      <option value="2">6</option>
+                      <option value="3">8</option>
+                      <option value="4">10</option>
+                      <option value="5">12</option>
+                      <option value="6">14</option>
+                    </select>
+                 <button type="submit" class="rounded btn btn-ben">AÑADIR A CARRITO</button>
+              </form>
+            </div>
+            </div>
+          </div>
+          {% endif %}
+          {% endif %}
+        {% endfor %}
+        </div>
+        </div>
+      </div>
+      <div class="tab-pane fade text-center" id="dos" role="tabpanel" aria-labelledby="list-dos-list">
+        <h2>Chaquetas y Abrigos</h2>
+         <div class="container">
+          <div class="row">
+          {% for product in products %}
+          {% if product.activo==1 %}
+          {% if product.categoria==7 %}
+          <div class="col-4 text-center">
+            <div class="card text-center" style="width: 18rem;">
+              <img src="uploads/{{product.imagen}}" width="300" >
+              <div class="card-body">
+              <h5 class="card-title">{{product.nombre}}</h5>
+              <p class="card-text">{{product.detalle}}</p>
+              <p class="card-text">Precio Bs.- {{product.precio}}</p>
+              <form action="/benbol/addcarrito/{{product.idProducto}}" method="post">
+               <label class="campo-ben my-1 mr-2" for="tallas">Talla</label>
+                   <select name="tallas" class="custom-select my-1 mr-sm-2" id="tallas">
+                      <option value="1">4</option>
+                      <option value="2">6</option>
+                      <option value="3">8</option>
+                      <option value="4">10</option>
+                      <option value="5">12</option>
+                      <option value="6">14</option>
+                    </select>
+                 <button type="submit" class="rounded btn btn-ben">AÑADIR A CARRITO</button>
+              </form>
+            </div>
+            </div>
+          </div>
+          {% endif %}
+          {% endif %}
+        {% endfor %}
+        </div>
+        </div>
+      </div>
+      <div class="tab-pane fade text-center" id="tres" role="tabpanel" aria-labelledby="list-tres-list">
+        <h2>Leggins</h2>
+         <div class="container">
+          <div class="row">
+          {% for product in products %}
+          {% if product.activo==1 %}
+          {% if product.categoria==8 %}
+          <div class="col-4 text-center">
+            <div class="card text-center" style="width: 18rem;">
+              <img src="uploads/{{product.imagen}}" width="300" >
+              <div class="card-body">
+              <h5 class="card-title">{{product.nombre}}</h5>
+              <p class="card-text">{{product.detalle}}</p>
+              <p class="card-text">Precio Bs.- {{product.precio}}</p>
+              <form action="/benbol/addcarrito/{{product.idProducto}}" method="post">
+               <label class="campo-ben my-1 mr-2" for="tallas">Talla</label>
+                   <select name="tallas" class="custom-select my-1 mr-sm-2" id="tallas">
+                     <option value="1">4</option>
+                      <option value="2">6</option>
+                      <option value="3">8</option>
+                      <option value="4">10</option>
+                      <option value="5">12</option>
+                      <option value="6">14</option>
+                    </select>
+                 <button type="submit" class="rounded btn btn-ben">AÑADIR A CARRITO</button>
+              </form>
+            </div>
+            </div>
+          </div>
+          {% endif %}
+          {% endif %}
+        {% endfor %}
+        </div>
+        </div>
+      </div>
+      <div class="tab-pane fade text-center" id="cuatro" role="tabpanel" aria-labelledby="list-cuatro-list">
+        <h2>Vestidos y Monos</h2>
+         <div class="container">
+          <div class="row">
+          {% for product in products %}
+          {% if product.activo==1 %}
+          {% if product.categoria==9 %}
+          <div class="col-4 text-center">
+            <div class="card text-center" style="width: 18rem;">
+              <img src="uploads/{{product.imagen}}" width="300" >
+              <div class="card-body">
+              <h5 class="card-title">{{product.nombre}}</h5>
+              <p class="card-text">{{product.detalle}}</p>
+              <p class="card-text">Precio Bs.- {{product.precio}}</p>
+              <form action="/benbol/addcarrito/{{product.idProducto}}" method="post">
+               <label class="campo-ben my-1 mr-2" for="tallas">Talla</label>
+                   <select name="tallas" class="custom-select my-1 mr-sm-2" id="tallas">
+                      <option value="1">4</option>
+                      <option value="2">6</option>
+                      <option value="3">8</option>
+                      <option value="4">10</option>
+                      <option value="5">12</option>
+                      <option value="6">14</option>
+                    </select>
+                 <button type="submit" class="rounded btn btn-ben">AÑADIR A CARRITO</button>
+              </form>
+            </div>
+            </div>
+          </div>
+          {% endif %}
+          {% endif %}
+        {% endfor %}
+        </div>
+        </div>
+      </div>
+      <div class="tab-pane fade text-center" id="cinco" role="tabpanel" aria-labelledby="list-cinco-list">
+        <h2>Recien Nacida</h2>
+         <div class="container">
+          <div class="row">
+          {% for product in products %}
+          {% if product.activo==1 %}
+          {% if product.categoria==10 %}
+          <div class="col-4 text-center">
+            <div class="card text-center" style="width: 18rem;">
+              <img src="uploads/{{product.imagen}}" width="300" >
+              <div class="card-body">
+              <h5 class="card-title">{{product.nombre}}</h5>
+              <p class="card-text">{{product.detalle}}</p>
+              <p class="card-text">Precio Bs.- {{product.precio}}</p>
+              <form action="/benbol/addcarrito/{{product.idProducto}}" method="post">
+               <label class="campo-ben my-1 mr-2" for="tallas">Talla</label>
+                   <select name="tallas" class="custom-select my-1 mr-sm-2" id="tallas">
+                      <option value="1">4</option>
+                      <option value="2">6</option>
+                      <option value="3">8</option>
+                      <option value="4">10</option>
+                      <option value="5">12</option>
+                      <option value="6">14</option>
+                    </select>
+                 <button type="submit" class="rounded btn btn-ben">AÑADIR A CARRITO</button>
+              </form>
+            </div>
+            </div>
+          </div>
+          {% endif %}
+          {% endif %}
+        {% endfor %}
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>    
+  </main>   
+{% endblock %}
+  

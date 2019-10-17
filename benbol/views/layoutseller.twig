@@ -1,0 +1,36 @@
+{% extends "general.twig"%}
+{% block principal %}
+    <!--Navbar -->
+    <nav id="header" class="navbar navbar-expand-lg m-0 pb-4 pt-4">
+      <div class="container-fluid p-0 mt-0">
+        <a class="navbar-brand pb-0 pt-0" href="/benbol/cajero">
+          <img src="images/logo.png" alt="Benneton Logo">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#header" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse mt-0 mb-0" id="navbar">
+            <ul class="navbar-nav mr-auto m-0" id="right">
+              
+            </ul>
+            <ul id="left" class="navbar-nav ml-auto mt-0 mb-0">
+              <li class="nav-item pl-3 pr-3 pb-3 pt-3">
+                <a href="/benbol/cajero"><i class="fas fa-cogs text-ben2"></i></a>
+              </li>
+              <li class="nav-item pl-3 pr-3 pb-3 pt-3">
+                <a href="/benbol/logout">
+                <i class="fas fa-sign-out-alt text-ben2"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+    </nav>
+    <!--/Navbar -->
+    
+    <!--Main-->
+    {% block main %}
+    {% endblock %}
+    <!--/Main-->
+
+{% endblock %}    

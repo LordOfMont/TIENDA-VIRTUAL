@@ -1,0 +1,25 @@
+{% extends "layoutcarrito.twig" %}
+{% block main %}
+    <main id="main">
+       <div class="container-fluid text-center">
+          <h2>ELEMENTOS EN TU CARRITO</h2>
+          <div class="row">
+          {% for product in products %}
+          <div class="col-3 text-center">
+            <div class="card text-center" style="width: 18rem;">
+              <img src="uploads/{{product.imagen}}" width="300" >
+              <div class="card-body">
+                <h5 class="card-title">{{product.producto}}</h5>
+                <p class="card-text">Cantidad: {{product.cantidad}}</p>
+                <p class="card-text">Talla: {{product.tallap}}</p>
+                <p class="card-text">Precio Bs.- {{product.precio}}</p>
+                <a href="/benbol/deleteprodcarrito/{{product.idProducto}}/{{product.tallap}}" class="btn btn-ben">Borrar</a>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+          </div>
+        </div>
+    </main>   
+{% endblock %}
+  

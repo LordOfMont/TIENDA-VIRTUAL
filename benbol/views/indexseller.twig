@@ -1,0 +1,21 @@
+{% extends "layoutseller.twig" %}
+{% block main %}
+ <main id="main" class="text-center pt-4">
+    {% if responseMessage %}
+        <div class="alert alert-info col-2 offset-5 mb-0" role="alert">
+          {{ responseMessage }}
+        </div>
+       {% endif %}
+    <h1>BIENVENIDO CAJERO</h1>
+    <h6>Introduce Codigo de Compra</h6>    
+    <div class="container text-center">
+     <form action="/benbol/cajero" method="post" class="col-4 offset-4">
+        <div class="form-group">
+        <input type="text" class="form-control campo-ben rounded" name="code" placeholder="Codigo de Compra" required>
+        </div>    
+        <button type="submit" class="rounded btn btn-ben">VALIDAR CODIGO</button>
+    </form>
+    </div>
+</main> 
+{% endblock %}
+  

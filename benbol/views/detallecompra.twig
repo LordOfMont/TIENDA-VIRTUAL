@@ -1,0 +1,33 @@
+{% extends "layoutcarrito.twig" %}
+{% block main %}
+    <main id="main">
+       <div class="container-fluid text-center">
+          <h2>DETALLE DE TU COMPRA</h2>
+          <table class="table col-8 offset-2">
+            <thead>
+              <tr>
+                <th scope="col">Producto</th>
+                <th scope="col">Precio</th>
+                <th scope="col">Talla</th>
+                <th scope="col">Cantidad</th>
+                <th scope="col">Sub Total</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for product in products %}
+                <tr>
+                  <td>{{product.producto}}</td>
+                  <td>{{product.precio}}</td>
+                  <td>{{product.tallap}}</td>
+                  <td>{{product.cantidad}}</td>
+                  <td>{{product.subt}}</td>
+                </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+          <h3>TOTAL: Bs.- {{total}}</h3>
+          <a href="/benbol/pago"><button class="mt-4 rounded btn btn-ben"><h5>PAGAR</h5></button></a>
+        </div>
+    </main>   
+{% endblock %}
+  

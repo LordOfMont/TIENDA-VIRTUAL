@@ -1,0 +1,40 @@
+{% extends "layoutcarrito.twig" %}
+{% block main %}
+    <main id="main">
+       {% if responseMessage %}
+        <div class="alert alert-info mb-0" role="alert">
+          {{ responseMessage }}
+        </div>
+       {% endif %}
+       <div class="container pt-4"> 
+          <div class="row pt-4">
+              <div class="col-md-6 offset-md-3 pt-0"> 
+                <h1 class="text-center text-uppercase">PAGO ELECTRONICO</h1>
+                <h6 class="text-center">Solo se aceptan pagos en tarjeta de debito o credito de VISA y MASTERCARD</h6>
+                <form action="/benbol/pago" method="post">
+                  <div class="form-group">
+                    <input type="text" class="form-control campo-ben rounded" name="nombre" placeholder="Nombre" required>
+                  </div>
+                  <div class="form-group">
+                    <input type="text" class="form-control campo-ben rounded" name="apellido" placeholder="Apellido" required>
+                  </div>
+                  <div class="form-group">
+                    <input type="text" class="form-control campo-ben rounded" name="numero" placeholder="Número de Tarjeta" required>
+                  </div>
+                  <div class="form-group">
+                    <input type="text" class="form-control campo-ben rounded" name="fecha" placeholder="Fecha de Vencimiento MM/AA" required>
+                  </div>
+                  <div class="form-group">
+                    <input type="text" class="form-control campo-ben rounded" name="cvv" placeholder="Codigo de Seguridad (CVV)" required>
+                  </div>
+                  <button type="submit" class="rounded btn btn-ben">VALIDAR PAGO</button>
+                </form>
+              </div> 
+              <div class="col-md-6 offset-md-3 pt-1">
+                <a href="/benbol/carrito"><button class="mt-1 rounded btn btn-ben">VOLVER A CARRITO</button></a>
+              </div>
+          </div>
+      </div>
+    </main>   
+{% endblock %}
+  

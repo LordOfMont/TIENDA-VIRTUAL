@@ -1,0 +1,48 @@
+{% extends "general.twig" %} 
+{% block principal %} 
+    <!--Navbar -->
+    <nav id="header" class="navbar navbar-expand-lg m-0 pb-4 pt-4">
+      <div class="container-fluid p-0 mt-0">
+        <a class="navbar-brand pb-0 pt-0" href="/benbol/user">
+          <img src="images/logo.png" alt="Benneton Logo">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#header" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse mt-0 mb-0" id="navbar">
+            <ul class="navbar-nav mr-auto m-0" id="right">
+              <li class="nav-item ml-1 mr-1">
+                <a class="nav-link text-ben" href="/benbol/mujer"><h5>Mujer</h5></a>
+              </li>
+              <li class="nav-item ml-1 mr-1">
+                <a class="nav-link text-ben" href="/benbol/hombre"><h5>Hombre</h5></a>
+              </li>
+              <li class="nav-item ml-1 mr-1">
+                <a class="nav-link text-ben" href="/benbol/nina"><h5>Niña</h5></a>
+              </li>
+              <li class="nav-item ml-1 mr-1">
+                <a class="nav-link text-ben" href="/benbol/nino"><h5>Niño</h5></a>
+              </li>
+              
+            </ul>
+            <ul id="left" class="navbar-nav ml-auto mt-0 mb-0">
+              <li class="nav-item pl-3 pr-3 pb-3 pt-3">
+                <a href="/benbol/user"><i class="fa fa-user text-ben2"></i></a>
+              </li>
+              
+              <li class="nav-item pl-3 pr-3 pb-3 pt-3">
+                <a href="/benbol/carrito"><i class="fas fa-cart-arrow-down text-ben2"></i></a>
+              </li>
+              <li class="nav-item pl-3 pr-3 pb-3 pt-3">
+                <a href="/benbol/logout"><i class="fas fa-sign-out-alt text-ben2"></i>
+              </li>
+            </ul>
+          </div>
+        </div>
+    </nav>
+    
+    <!--Main-->
+    {% block main %}
+    {% endblock %}
+    <!--/Main-->
+{% endblock %}
